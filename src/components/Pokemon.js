@@ -1,12 +1,15 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import getPokemon from "../services/getPokemon"
 
 const Pokemon = ({name, url}) => {
+
+    const [pokeImg, setPokeImg] = useState('')
 
     useEffect(() => {
         getPokemon(url)
             .then(response => {
                 console.log(response.data)
+                setPokeImg(response.data.sprites.front_default)
             })
             .catch(err => {
                 console.log(err)
@@ -15,9 +18,9 @@ const Pokemon = ({name, url}) => {
 
 
 
-
     return (
         <div>
+            <img src={pokeImg} alt='' />
             <h1> {name} </h1>
         </div>
     )
