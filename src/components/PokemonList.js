@@ -7,6 +7,7 @@ const PokemonList = () => {
     const [pokeArray, setPokeArray] = useState([])
 
     useEffect(() => {
+
         getAllPokemons()
             .then(response =>{
                 setPokeArray(response.data.results)

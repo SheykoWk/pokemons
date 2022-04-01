@@ -1,10 +1,8 @@
-import dotenv from 'dotenv'
-import axios from 'axios';
-dotenv.config()
+import axios from 'axios'
 
 const getSuperHeroes = async () =>{
 
-    const URL = `https://superheroapi.com/api/${process.env.API_KEY}`
+    const URL = `http://superheroapi.com/api/310632584490877/1`
     const req = await axios.get(URL)
     return req
 

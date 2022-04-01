@@ -8,7 +8,6 @@ const Pokemon = ({name, url}) => {
     useEffect(() => {
         getPokemon(url)
             .then(response => {
-                console.log(response.data)
                 setPokeImg(response.data.sprites.front_default)
             })
             .catch(err => {
